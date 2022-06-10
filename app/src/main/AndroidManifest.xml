@@ -8,14 +8,13 @@
 
     <application
         android:allowBackup="true"
-        android:appComponentFactory="nz.co.test.transactions.di.DaggerAppComponentFactory"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".AppApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Transactions"
-        tools:replace="android:appComponentFactory">
+        android:theme="@style/Theme.Transactions">
         <activity
             android:name=".activities.MainActivity"
             tools:ignore="Instantiatable">
