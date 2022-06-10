@@ -18,4 +18,18 @@ class DaggerAppComponentFactory : AppComponentFactory() {
 
     @Inject
     lateinit var map: Map<Class<out Activity>, @JvmSuppressWildcards Provider<Activity>>
+
+    override fun instantiateActivityCompat(
+        cl: ClassLoader,
+        className: String,
+        intent: Intent?
+    ): Activity {
+        val creator = map[Class.forName(className, false, cl)]
+
+        return if (creator != null) {
+            creator.get()
+        } else {
+            return super.instantiateActivityCompat(cl, className, intent)
+        }
+    }
 }
