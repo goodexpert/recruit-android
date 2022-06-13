@@ -1,28 +1,18 @@
 package nz.co.test.transactions.activities
 
 import android.os.Bundle
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import dagger.hilt.android.AndroidEntryPoint
-import nz.co.test.transactions.R
-import nz.co.test.transactions.viewmodels.MainViewModel
+import nz.co.test.transactions.ui.MainScreen
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
-
-    private val viewModel: MainViewModel by viewModels()
+class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        lifecycleScope.launchWhenCreated {
-            viewModel.fetchTransactions()
-        }
-
-        viewModel.getTransactions().observe(this) { list ->
-            println(list)
+        setContent {
+            MainScreen()
         }
     }
 }

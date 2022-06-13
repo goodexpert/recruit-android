@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Transactions</string>
+
+    <string name="credit_amount">Credit Amount</string>
+    <string name="debit_amount">Debit Amount</string>
+    <string name="summary">Summary</string>
+    <string name="top">Top</string>
+    <string name="transaction_date">Transaction Date</string>
+    <string name="transaction_date_pattern">dd/MM/yyyy HH:mm:ss</string>
 </resources>

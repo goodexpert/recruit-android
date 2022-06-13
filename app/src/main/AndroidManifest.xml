@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Transactions">
         <activity
+            android:exported="true"
             android:name=".activities.MainActivity"
             tools:ignore="Instantiatable">
             <intent-filter>
